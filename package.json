@@ -18,7 +18,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Paola Solari",
   "license": "ISC",
-  "description": ""
+  "description": "Jeopardy Game Website to play with questions from the show using scraped data using puppeteer"
 }

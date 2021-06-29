@@ -113,6 +113,26 @@ const url = "https://www.j-archive.com/showgame.php?game_id=7053";
             (element) => element.textContent
         )
     )
+    
+    let gameData = {
+        categories: categories,
+        clues: clues,
+        answers: answers,
+        doubleCategories: doubleCategories,
+        doubleClues: doubleClues,
+        doubleAnswers: doubleAnswers,
+        finalCategory: finalCategory,
+        finalClue: finalClue,
+        finalAnswer: finalAnswer,
+        date: date
+    };
+
+    const jsonFile = JSON.stringify(gameData);
+    fs.writeFile("game.json",jsonFile, function(err){
+        if(err){
+            console.log(err)
+        }
+    });
 
     //close puppeteer browser
     await browser.close()
@@ -121,24 +141,5 @@ const url = "https://www.j-archive.com/showgame.php?game_id=7053";
 
 
 
-    //     let gameData = {
-    //         jeopardyRoundCats: jeopardyRoundCats,
-    //         jeopardyClues: jeopardyClues,
-    //         jeopardyResponses: jeopardyResponses,
-    //         doubleJeopardyCats: doubleJeopardyCats,
-    //         doubleJeopardyClues: doubleJeopardyClues,
-    //         doubleJeopardyResponses: doubleJeopardyResponses,
-    //         finalCategory: finalCategory,
-    //         finalClue: finalClue,
-    //         finalResponse: finalResponse,
-    //         gameDate: gameDate
-    //     };
+        
 
-    //     const jsonFile = JSON.stringify(gameData);
-    //     fs.writeFile("game.json",jsonData, function(err){
-    //         if(err){
-    //             console.log(err)
-    //         }
-    //     });
-
-    // })
